@@ -1,0 +1,23 @@
+
+ {% extends 'base.html.twig' %} 
+
+{%  block  title    %} {{title}} {% endblock %}
+{%  block  body    %}
+
+<div>
+here i am  
+</div>
+ <h1>wohoooo</h1>
+<hr>
+ {% for movie in movies %}
+ <li>{{  movie.title   }}</li>
+ {% endfor %}
+<hr>
+current page name 
+{{ _self }} <br>
+current char-set <br>
+{{ _charset }}
+inside our config/packages twig.yaml define any global <br>
+{{ author }}
+
+{% endblock %}

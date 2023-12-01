@@ -1,0 +1,6 @@
+mvc - design pattern sw arcitecture 
+
+model : manages fundamental behaviros and data , respond notify observers event driven sys 
+view : interface of app , pull data translate into view 
+controller : take http req gets the right data , validates  inpt, send response 
+

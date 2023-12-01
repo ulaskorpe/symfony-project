@@ -1,0 +1,10 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals: 
+        author : ulas körpe
+        birthdate : 27-06-1978
+        email :  ulaskorpe@gmail.com
+
+when@test:
+    twig:
+        strict_variables: true

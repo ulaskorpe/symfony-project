@@ -1,0 +1,81 @@
+ 
+ {% extends 'base.html.twig' %} 
+
+{%  block  body    %}
+
+<p>
+ composer require annotations - install annotations first !
+symfony console make:controller SomeController
+php bin/console make:controller SomeController
+</p>
+
+<p>
+
+ #[Route('/movies', name: 'app_movies')]   /// new method<br>
+  define global vars in twig.yaml in  section globals : <br>
+ composer require twig <br>
+orm : symfony uses doctrine as orm - obj relation method<br>
+ composer require symfony/orm-pack<br>
+ composer require symfony/maker-bundle<br>
+
+added to settings.json file under vscodes settings<br>
+  "emmet.includeLanguages": {"twig":"html"},<br>
+
+</p>
+
+<p>
+<b>DATABASE :</b> <br><br>
+create db :  php bin/console doctrine:database:create / drop<br>
+DATABASE_URL="mysql://homestead:secret@localhost/syfony_db"  /// .env file required <br><br>
+
+php bin/console make:entity Movie <br><br>
+
+php bin/console make:entity Actor <br><br>
+
+php bin/console make:entity Movie > open again add property actors > relate with Actor <br><br>
+
+to create tables > php bin/console make:migration  > creates migrations <br><br>
+
+migration executes raw sql  , clever enough to make relations and drops <br><br>
+
+php bin/console doctrine:migrations:migrate > executes<br><br>
+
+! table names are singular make plural if you want <br>
+! tables override if exists <br>
+
+</p>
+<p>
+<b>relationships :: </b><br>
+ManyToOne -  OneToMany -  ManyToMany - OneToOne
+</p>
+<p>
+<b>Fixtures:</b><br>
+composer require --dev doctrine/doctrine-fixtures-bundle > adds fixtures to your project<br>
+fixtures = seeeder <br>
+ $this->addReference('actor_'.$i,$actor);//adds a relation ref to use in other fixtures <br>
+  $movie->addActor($this->getReference('actor_'.rand(1,12)));// uses an added ref 
+</p>
+<p>
+
+ <b> Repository : </b><br><br>
+  each entity has a Repository contains functions reach DB , like Model <br>
+  $movies = >$movieRepository->findAll()<br>
+  Repository can be reached ove EntityManagerInterface  ,  $em->getRepository(Entity::class); <br>
+  EntityManagerInterface gives far more functions than Repository<br><br>
+
+!! create EntityManagerInterface $em in __contruct as private , so you can use in many functions !!!<br><br>
+
+        //$movies = >$movieRepository->findAll()<br>
+       // $movies = $repository->findAll();<br>
+      // $movies = $repository->find(17);<br>
+      count(['id'=>5])<br>
+      getClassName -> returns entity name<br>
+     views are returned with render - install twig first<br><br>
+
+     ASSETS In symfony : <br>
+     composer require symfony/webpack-encore-bundle<br>
+     composer require symfony/asset<br>
+
+</p>
+
+{% endblock %}
