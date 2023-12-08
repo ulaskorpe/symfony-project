@@ -56,7 +56,7 @@ composer require --dev doctrine/doctrine-fixtures-bundle > adds fixtures to your
 fixtures = seeeder 
  $this->addReference('actor_'.$i,$actor);//adds a relation ref to use in other fixtures 
   $movie->addActor($this->getReference('actor_'.rand(1,12)));// uses an added ref 
-
+php bin/console doctrine:fixtures:load  run the seed
 
   Repository : 
   each entity has a Repository contains functions reach DB , like Model 
@@ -77,3 +77,35 @@ fixtures = seeeder
      composer require symfony/webpack-encore-bundle
      composer require symfony/asset
 
+/// findAll , find() , findBy ([where][order]) , findOneBy([]) , count([where])
+
+
+import js 
+import './javascript/method1.js';  in app.js file 
+or inside webpack.config.js file 
+  .addEntry('method2', './assets/javascript/method2.js')  another js file
+
+  npm install -D tailwindcss postcss-loader purgecss-webpack-plugin glob-all path
+  npx tailwindcss init -p  :: this will create tailwindcss conf file
+ npx tailwindcss -i ./assets/styles/app.cs -o./public/build/app.css
+
+ images compile another assets
+ npm install file-loader --save-dev
+ webpack.config.js
+
+ form 
+ php bin/console make:form MovieTypeForm Movie ( the model )
+
+
+ composer require symfony/validator doctrine/annotations
+ in model
+ use Symfony\Component\Validator\Constraints as Assert;
+  /**
+     * @ORM\Column(type="string",length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(min=3)
+     */
+
+     auto generates validation 
+
+       public function setTitle(?string $title): static  :  ? makes nullable

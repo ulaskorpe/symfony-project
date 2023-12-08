@@ -1,0 +1,16 @@
+ {% extends 'base.html.twig' %} 
+
+
+{% block body %}
+<div class="mx-auto w-4/5 my-8">
+ 
+{{ form_start(form) }}
+
+    {{ form_widget(form) }}
+ 
+<br><br>
+<button type="submit" class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg py-4">Submit</button>
+</div>
+{{ form_end(form) }}
+
+{% endblock %}

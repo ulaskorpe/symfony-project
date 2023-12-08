@@ -19,4 +19,17 @@ class HomeController extends AbstractController
 
         return $this->render('home.html.twig',['title'=>'Symfony Notes']);
     }
+
+
+
+    #[Route('/movie-xxs/{name}', name: 'app_movies',defaults:['name'=>'alien-2'],methods:['GET','HEAD'])]
+    //public function index($name="alien"): JsonResponse
+    public function indexeex($name ): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Welcome to your new controller!'.$name,
+            'path' => 'src/Controller/MoviesController.php',
+        ]);
+    }
+
 }

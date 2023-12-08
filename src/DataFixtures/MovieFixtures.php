@@ -19,12 +19,12 @@ class MovieFixtures extends Fixture
           $movie->setReleaseYear(rand(1970,2023));             
           $movie->setDescription($faker->safeColorName);             
        // $movie->setImagePath('https://cdn.pixabay.com/photo/2022/11/23/20/49/barbarian-warrior-7612898_1280.jpg');  // $movie->setTitle('Conan The Barbarian');             
-             
-        $movie->setImagePath('https://cdn.pixabay.com/photo/2022/11/23/20/49/barbarian-warrior-7612898_1280.jpg');
-       $movie->addActor($this->getReference('actor_'.rand(1,12)));
-       $movie->addActor($this->getReference('actor_'.rand(1,12)));
-       $movie->addActor($this->getReference('actor_'.rand(1,12)));// uses an added ref 
-      $manager->persist($movie);
+
+      $movie->setImagePath('https://cdn.pixabay.com/photo/2022/11/23/20/49/barbarian-warrior-7612898_1280.jpg');
+      $movie->addActor($this->getReference('actor_' . rand(1, 12)));
+      $movie->addActor($this->getReference('actor_' . rand(1, 12)));
+      $movie->addActor($this->getReference('actor_'.rand(1,12)));// uses an added ref 
+           $manager->persist($movie);
         }
 
         $manager->flush();

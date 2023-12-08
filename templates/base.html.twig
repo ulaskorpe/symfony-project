@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% if title %} {{title}} {% else %} SYMFONY PROJECT  {% endif %}</title>
+        <title> symfony project</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {% block stylesheets %}
            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
@@ -10,10 +10,11 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+           
         {% endblock %}
     </head>
     <body  >
- 
+ <a href="/{{ app.user ? 'logout':'login'}}">{{ app.user ? 'Logout':'Login'}}</a>
         <div style="max-width:80%;margin:0px auto">
         {% block body %} <h1>Empty BODY</h1> {% endblock %}
         </div>

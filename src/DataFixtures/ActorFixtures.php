@@ -23,7 +23,7 @@ class ActorFixtures extends Fixture
           $this->addReference('actor_'.$i,$actor);//adds a relation ref to use in other fixtures 
         }
 
-        $manager->flush();
+        $manager->flush();/// this is final act
 
       
     }

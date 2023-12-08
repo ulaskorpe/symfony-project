@@ -1,0 +1,22 @@
+ {% extends 'base.html.twig' %} 
+
+{%  block  body    %}
+
+{% if app.user %}
+    <a href="/movies/create">create movie</a>
+{% endif %}
+
+<table>
+{% for movie in movies%}
+<tr><td>{{  movie.title   }}</td><td><img src="{{ movie.imagePath}}" alt="" style="width: 110px;"></td>
+{% if app.user %}
+<td><a href="/movies/edit/{{movie.id}}" class="bg-green-500">edit</a></td>
+
+<td><a href="/movies/delete/{{movie.id}}">delete</a></td>
+{% endif %}
+</tr>  
+{% endfor %}
+
+</table>
+
+ {% endblock %}  
